@@ -1,0 +1,6 @@
+out/
+.idea/
+*.class
+*.iml
+*.pdf
+.DS_Store/
