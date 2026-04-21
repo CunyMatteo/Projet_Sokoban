@@ -69,8 +69,42 @@ public class Jeu {
             case BAS:     return new int[]{x, y + 1};
             case GAUCHE:  return new int[]{x - 1, y};
             case DROITE:  return new int[]{x + 1, y};
+            default:      return null;
         }
     }
 
-    public void
+    public void deplacerPerso(String action) throws ActionInconnueException {
+
+        int[] destination = getSuivant(perso.x, perso.y, action);
+        if (destination == null) {
+            throw new ActionInconnueException("Action inconnue : " + action);
+        }
+
+        int nx = destination[0];
+        int ny = destination[1];
+
+        if (this.laby.etreMur(nx, ny)) { // s'il y a un mur on bouge pas
+            return;
+        }
+
+        Element caisse = this.caisses.getElement(nx, ny); // on verifie s'il y a une caisse ou pas
+
+        if (caisse != null) {
+
+            int[] apresCaisse = getSuivant(nx, ny, action); // On calcule la case APRES la caisse pour pouvoir la pousser
+            int ax = apresCaisse[0];
+            int ay = apresCaisse[1];
+
+
+            if (!this.laby.etreMur(ax, ay) && this.caisses.getElement(ax, ay) == null) { // On peut pousser si la case après n'est ni un mur ni une autre caisse
+                caisse.x = ax; // là on déplace la caisse
+                caisse.y = ay;
+                this.perso.x = nx;  // puis le personnage
+                this.perso.y = ny;
+            }
+        } else {    // et si la case est vide ou si c'est un dépôt, on déplace juste le perso
+            this.perso.x = nx;
+            this.perso.y = ny;
+        }
+    }
 }
