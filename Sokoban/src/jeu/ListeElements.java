@@ -3,7 +3,7 @@ import java.util.*;
 
 public class ListeElements {
 
-    ArrayList<Element> liste = new ArrayList<Element>();
+    ArrayList<Element> liste;
 
     public ListeElements() {
         this.liste = new ArrayList<>();

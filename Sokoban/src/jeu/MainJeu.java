@@ -39,8 +39,6 @@ public class MainJeu {
                     System.out.println("ERREUR : " + e.getMessage());
                 }
             }
-
-            // MESSAGE DE VICTOIRE
             System.out.println("\n" + jeu.jeuToString());
             System.out.println("BRAVO ! Vous avez gagné en " + nbCoups + " coups.");
 

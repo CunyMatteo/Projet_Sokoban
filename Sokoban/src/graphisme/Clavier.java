@@ -31,22 +31,22 @@ public class Clavier extends KeyAdapter {
         try {
             // gestion haut : z ou fleche
             if ((e.getKeyChar() == 'z') || (e.getKeyCode() == KeyEvent.VK_UP)) {
-                this.app.deplacerPerso(jeu.HAUT);
+                this.app.deplacerPerso(jeu.Jeu.HAUT);
             }
 
             // gestion bas : s ou fleche
             else if ((e.getKeyChar() == 's') || (e.getKeyCode() == KeyEvent.VK_DOWN)) {
-                this.app.deplacerPerso(jeu.BAS);
+                this.app.deplacerPerso(jeu.Jeu.BAS);
             }
 
             // gestion droite : d ou fleche
             else if ((e.getKeyChar() == 'd') || (e.getKeyCode() == KeyEvent.VK_RIGHT)) {
-                this.app.deplacerPerso(jeu.DROITE);
+                this.app.deplacerPerso(jeu.Jeu.DROITE);
             }
 
             // gestion gauche : q ou fleche
             else if ((e.getKeyChar() == 'q') || (e.getKeyCode() == KeyEvent.VK_LEFT)) {
-                this.app.deplacerPerso(jeu.GAUCHE);
+                this.app.deplacerPerso(jeu.Jeu.GAUCHE);
             }
 
 

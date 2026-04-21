@@ -1,12 +1,12 @@
 package jeu;
 
 public class Labyrinthe {
-    final static char MUR = '#';
-    final static char CAISSE = '$';
-    final static char PJ = '@';
-    final static char DEPOT = '.';
-    final static char VIDE = ' ';
-    boolean [][] murs;
+    public final static char MUR = '#';
+    public final static char CAISSE = '$';
+    public final static char PJ = '@';
+    public final static char DEPOT = '.';
+    public final static char VIDE = ' ';
+    public boolean [][] murs;
 
     public Labyrinthe(int x, int y) {
         this.murs = new boolean[x][y];

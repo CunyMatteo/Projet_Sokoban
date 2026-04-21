@@ -18,10 +18,10 @@ public class Controleur extends JPanel implements ActionListener {
         this.app = pApp;
 
         // creer des boutons
-        JButton haut = new JButton(jeu.HAUT);
-        JButton bas = new JButton(jeu.BAS);
-        JButton gauche = new JButton(jeu.GAUCHE);
-        JButton droite = new JButton(jeu.DROITE);
+        JButton haut = new JButton(jeu.Jeu.HAUT);
+        JButton bas = new JButton(jeu.Jeu.BAS);
+        JButton gauche = new JButton(jeu.Jeu.GAUCHE);
+        JButton droite = new JButton(jeu.Jeu.DROITE);
 
         // ajoute les reactions
         haut.addActionListener(this);
