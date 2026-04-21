@@ -24,11 +24,32 @@ public class MainJeu {
 
         try {
             Jeu jeu = Chargement.chargerJeu(lab);
+            int nbCoups = 0;
+
+            while (!jeu.etreFini()) {
+                System.out.println("\n" + jeu.jeuToString());
+                System.out.println("Déplacements : " + nbCoups);
+                System.out.print("Action (" + Jeu.HAUT + ", " + Jeu.BAS + ", " + Jeu.GAUCHE + ", " + Jeu.DROITE + ") : ");
+                String action = sc.nextLine();
+
+                try {
+                    jeu.deplacerPerso(action);
+                    nbCoups++;
+                } catch (ActionInconnueException e) {
+                    System.out.println("ERREUR : " + e.getMessage());
+                }
+            }
+
+            // MESSAGE DE VICTOIRE
+            System.out.println("\n" + jeu.jeuToString());
+            System.out.println("BRAVO ! Vous avez gagné en " + nbCoups + " coups.");
 
         } catch (FichierIncorrectException e) {
             System.out.println("Erreur dans le contenu du labyrinthe : " + e.getMessage());
         } catch (IOException e) {
-            System.out.println("Fichier introuvable ou illisible : " + e.getMessage());
+            System.out.println("Fichier introuvable ou inaccessible (" + lab + "). Vérifiez le dossier /laby.");
+        } finally {
+            sc.close();
         }
     }
 }
