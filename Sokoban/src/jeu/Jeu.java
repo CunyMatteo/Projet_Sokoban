@@ -62,4 +62,15 @@ public class Jeu {
         }
         return true;
     }
+
+    public static int[] getSuivant(int x, int y, String action){
+        switch (action){
+            case HAUT:    return new int[]{x, y - 1}; // si action = HAUT, on va vers le haut
+            case BAS:     return new int[]{x, y + 1};
+            case GAUCHE:  return new int[]{x - 1, y};
+            case DROITE:  return new int[]{x + 1, y};
+        }
+    }
+
+    public void
 }
