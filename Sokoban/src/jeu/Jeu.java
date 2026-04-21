@@ -51,4 +51,15 @@ public class Jeu {
         }
         return res;
     }
+
+    public boolean etreFini() {
+        for (int i = 0; i < this.caisses.size(); i++) {
+            Element cc = this.caisses.liste.get(i);
+
+            if (this.depots.getElement(cc.x,cc.y) == null) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
