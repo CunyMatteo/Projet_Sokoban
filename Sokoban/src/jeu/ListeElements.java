@@ -16,4 +16,11 @@ public class ListeElements {
     public int size() {
         return this.liste.size();
     }
+
+    public Element getElement(int x, int y) {
+        for (Element e : this.liste) {
+            if (e.x == x && e.y == y) return e;
+        }
+        return null;
+    }
 }

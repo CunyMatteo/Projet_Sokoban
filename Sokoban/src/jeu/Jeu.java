@@ -5,6 +5,7 @@ public class Jeu {
     public final static String BAS = "Bas";
     public final static String GAUCHE = "Gauche";
     public final static String DROITE = "Droite";
+
     Perso perso;
     ListeElements caisses;
     ListeElements depots;
@@ -17,7 +18,37 @@ public class Jeu {
         this.depots = depots;
     }
 
-    public String jeuToString(){
-        return "";
+    public char getChar(int x, int y) {
+        if (this.perso.x == x && this.perso.y == y) {
+            return Labyrinthe.PJ;
+        }
+
+        if (this.caisses.getElement(x,y) != null){
+            return Labyrinthe.CAISSE;
+        }
+
+        if (this.depots.getElement(x,y) != null){
+            return Labyrinthe.DEPOT;
+        }
+
+        if (this.laby.etreMur(x, y)){
+            return Labyrinthe.MUR;
+        }
+
+        return Labyrinthe.VIDE;
+    }
+
+    public String jeuToString() {
+        String res = "";
+        int largeur = this.laby.murs.length;
+        int hauteur = this.laby.murs[0].length;
+
+        for (int y = 0; y < hauteur; y++) {
+            for (int x = 0; x < largeur; x++) {
+                res += getChar(x, y);
+            }
+            res += "\n";
+        }
+        return res;
     }
 }
