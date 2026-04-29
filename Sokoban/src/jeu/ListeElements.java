@@ -23,4 +23,8 @@ public class ListeElements {
         }
         return null;
     }
+
+    public ArrayList<Element> getListe() {
+        return liste;
+    }
 }

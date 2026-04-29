@@ -107,4 +107,20 @@ public class Jeu {
             this.perso.y = ny;
         }
     }
+
+    public Perso getPerso() {
+        return perso;
+    }
+
+    public ListeElements getCaisses() {
+        return caisses;
+    }
+
+    public ListeElements getDepots() {
+        return depots;
+    }
+
+    public Labyrinthe getLaby() {
+        return laby;
+    }
 }

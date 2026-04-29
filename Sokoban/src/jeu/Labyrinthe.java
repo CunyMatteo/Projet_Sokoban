@@ -19,4 +19,8 @@ public class Labyrinthe {
     public boolean etreMur(int x, int y) {
         return this.murs[x][y];
     }
+
+    public boolean[][] getMurs() {
+        return murs;
+    }
 }
